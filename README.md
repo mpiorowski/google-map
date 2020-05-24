@@ -4,7 +4,7 @@ Google maps with React and Express
 # dev deployment
 
 ## Prerequisites
-node, npm, docker, docker-compose
+node, npm, docker, docker-compose, knex
 
 ## google map api key
 ``cp ./client/src/app-parameters.dist.ts ./client/src/app-parameters.ts``  
