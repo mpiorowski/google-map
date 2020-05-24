@@ -1,0 +1,12 @@
+# Use postgres/example user/password credentials
+version: '3.6'
+
+services:
+
+  server:
+    container_name: google-map-server
+    build:
+      context: ../server
+      dockerfile: ../docker/Dockerfile.prod
+    environment:
+      - "NODE_ENV=production"

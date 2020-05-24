@@ -1,0 +1,56 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.42",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/socket.io-client": "^1.4.33",
+    "antd": "^4.2.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5",
+    "react-scripts": "3.4.1",
+    "recompose": "^0.30.0",
+    "socket.io-client": "^2.3.0",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^5.6.4",
+    "@types/googlemaps": "^3.39.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "craco-less": "^1.16.0",
+    "html-react-parser": "^0.10.3",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpackbar": "^4.0.0"
+  },
+  "proxy": "http://localhost:5000"
+}
