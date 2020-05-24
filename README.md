@@ -6,6 +6,10 @@ Google maps with React and Express
 ## Prerequisites
 node, npm, docker, docker-compose
 
+## google apki key
+``cp ./client/src/app-parameters.dist.ts ./client/src/app-parameters.ts``  
+add google map apki key
+
 ## postgres 
 docker setup  
 ``sh compose.sh dev``  
