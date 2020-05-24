@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { GOOGLE_MAP_KEY, SOCKET_ENDPOINT } from "../../config/global-variables";
+import { SOCKET_ENDPOINT } from "../../config/global-variables";
+import { GOOGLE_MAP_KEY } from "../../app-parameters";
 import "./GoogleMapComponent.less";
 import { Row, Col } from "antd";
 import WrappedMap from "./MapComponent";
