@@ -12,11 +12,7 @@ docker setup
 or set up pg using config in server/knexfile.ts
 
 ## server
-``cd server``  
-``npm i``  
-``npm start-dev``  
+``npm --prefix ./server/ i && npm --prefix ./server/ run start-dev``
 
 ## client
-``cd client``  
-``npm i``  
-``npm start``
+``npm --prefix ./client/ i && npm --prefix ./client/ run start``
