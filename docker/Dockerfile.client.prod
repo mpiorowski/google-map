@@ -1,15 +1,14 @@
 # Stage 1 - Create a builder container
-FROM node:14 as builder
+FROM node:13-alpine as builder
 
-ENV APP_HOME=/usr/src/app/
-WORKDIR $APP_HOME
+WORKDIR /usr/src/app/
 
-COPY package.json $APP_HOME/package.json
-COPY tsconfig.json $APP_HOME/tsconfig.json
-COPY craco.config.js $APP_HOME/craco.config.js
+COPY package.json .
+COPY tsconfig.json .
+COPY craco.config.js .
 
-COPY src $APP_HOME/src
-COPY public $APP_HOME/public
+COPY src src
+COPY public public
 
 RUN npm install
 RUN npm run build
