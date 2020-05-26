@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GOOGLE_MAP_KEY, SOCKET_ENDPOINT } from "../../config/global-variables";
+import { GOOGLE_MAP_KEY } from "../../config/global-variables";
 import "./GoogleMapComponent.less";
 import { Row, Col } from "antd";
 import WrappedMap from "./MapComponent";
@@ -26,7 +26,7 @@ const GoogleMapComponent = () => {
     });
 
     // start socker
-    const socket = socketIOClient(SOCKET_ENDPOINT);
+    const socket = socketIOClient({path: "/socket"});
     socket.on("cars-response", (response: Car[]) => {
       setCars(response);
     });

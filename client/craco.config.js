@@ -1,7 +1,7 @@
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const WebpackBar = require("webpackbar");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CracoLessPlugin = require('craco-less');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CracoLessPlugin = require("craco-less");
 
 // Don't open the browser during development
 process.env.BROWSER = "none";
@@ -16,6 +16,13 @@ module.exports = {
         ? [new BundleAnalyzerPlugin({ openAnalyzer: false })]
         : []),
     ],
+  },
+
+  devServer: {
+    proxy: {
+      "/api": "http://localhost:9000/api",
+      "/socket": "http://localhost:9000/socket",
+    },
   },
 
   plugins: [

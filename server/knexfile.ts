@@ -36,7 +36,7 @@ export = {
   production: {
     client: "pg",
     connection: {
-      host: "localhost",
+      host: "db",
       port: 5432,
       database: "server",
       user: "admin",

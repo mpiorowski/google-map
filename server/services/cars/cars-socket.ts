@@ -1,7 +1,6 @@
 
 import knex = require("../../config/db");
 import { Car, cars } from "./cars-data";
-import { io } from "../../index";
 
 const now = Date.now();
 function ioConnection(io) {

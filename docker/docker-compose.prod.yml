@@ -3,10 +3,45 @@ version: '3.6'
 
 services:
 
+  db:
+    container_name: google-map-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: zaq1@WSX
+      POSTGRES_DB: server
+      PGDATA: /data/pgdata
+    volumes:
+      - ./pgdata:/data/pgdata
+    restart: on-failure
+
   server:
     container_name: google-map-server
     build:
       context: ../server
-      dockerfile: ../docker/Dockerfile.prod
+      dockerfile: ../docker/Dockerfile.server.prod
     environment:
       - "NODE_ENV=production"
+    depends_on: 
+      - db
+    restart: on-failure
+    command: bash -c "npm run migrate && node dist/index.js"
+
+  client:
+    container_name: google-map-client
+    build:
+      context: ../client
+      dockerfile: ../docker/Dockerfile.client.prod
+    environment:
+      - "NODE_ENV=production"
+    volumes:
+      - ../docker/nginx.prod.conf:/etc/nginx/conf.d/default.conf
+      # - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - "3000:3000"
+      # - "443:443"
+    depends_on: 
+      - db
+    restart: on-failure
+    command: ["nginx", "-g", "daemon off;"]

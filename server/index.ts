@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 const server = http.createServer(app);
-export const io = socketIO(server);
+const io = socketIO(server, { path: "/socket"});
 
 //routes
 import carsApi = require("./services/cars/cars-api");
@@ -20,6 +20,7 @@ app.use(carsApi);
 //sockets 
 require('./services/cars/cars-socket')(io);
 
-server.listen(5000, () => {
-  console.log("server has started");
+const port = 9000;
+server.listen(port, () => {
+  console.log("server has started on port:", port);
 });

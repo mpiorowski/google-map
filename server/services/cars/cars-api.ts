@@ -13,7 +13,7 @@ knex<Car[]>("cars").insert(cars).then();
 
 // cars api
 router.get("/api/cars", async (req, res) => {
-  console.log('request Api');
+  console.log("request Api");
   try {
     knex<Car[]>("cars")
       .orderBy("id", "asc")

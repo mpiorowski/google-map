@@ -51,6 +51,5 @@
     "less-loader": "^6.1.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpackbar": "^4.0.0"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
