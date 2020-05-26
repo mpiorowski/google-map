@@ -33,6 +33,7 @@ services:
     build:
       context: ../client
       dockerfile: ../docker/Dockerfile.client.prod
+      target: production
     environment:
       - "NODE_ENV=production"
     volumes:
